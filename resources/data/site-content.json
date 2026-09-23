@@ -1,0 +1,812 @@
+{
+  "meta": {
+    "defaultLocale": "lv",
+    "locales": [
+      "ru",
+      "lv",
+      "en"
+    ],
+    "note": "CRM-editable static content for Soundia. Edit dictionaries for ru/lv/en text and photoUrls for visible image URLs; services/projects keep the runtime fields used by the website."
+  },
+  "photoUrls": [
+    {
+      "id": "altum-liaa",
+      "label": "altum-liaa.jpeg",
+      "usedIn": "public asset",
+      "url": "/altum-liaa.jpeg"
+    },
+    {
+      "id": "liaa1-1",
+      "label": "liaa1-1.jpeg",
+      "usedIn": "public asset",
+      "url": "/liaa1-1.jpeg"
+    },
+    {
+      "id": "logo",
+      "label": "logo.png",
+      "usedIn": "public asset",
+      "url": "/logo.png"
+    },
+    {
+      "id": "logo",
+      "label": "logo.svg",
+      "usedIn": "public asset",
+      "url": "/logo.svg"
+    },
+    {
+      "id": "project",
+      "label": "Project.png",
+      "usedIn": "public asset",
+      "url": "/Project.png"
+    },
+    {
+      "id": "soundia-courses-hero",
+      "label": "soundia-courses-hero.png",
+      "usedIn": "public asset",
+      "url": "/soundia-courses-hero.png"
+    },
+    {
+      "id": "soundia-hero-clean",
+      "label": "soundia-hero-clean.png",
+      "usedIn": "public asset",
+      "url": "/soundia-hero-clean.png"
+    },
+    {
+      "id": "soundia-hero-reference",
+      "label": "soundia-hero-reference.png",
+      "usedIn": "public asset",
+      "url": "/soundia-hero-reference.png"
+    },
+    {
+      "id": "su-logo-eng-horizviolets",
+      "label": "su_logo-eng_horizviolets.png",
+      "usedIn": "public asset",
+      "url": "/su_logo-eng_horizviolets.png"
+    },
+    {
+      "id": "service-audio-guide",
+      "label": "Аудиогид",
+      "usedIn": "services",
+      "url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1400&q=85"
+    },
+    {
+      "id": "service-audio-quest",
+      "label": "Аудиоквест",
+      "usedIn": "services",
+      "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85"
+    },
+    {
+      "id": "service-spatial-audio",
+      "label": "3D-аудио",
+      "usedIn": "services",
+      "url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1400&q=85"
+    },
+    {
+      "id": "service-audio-game",
+      "label": "Аудиоигра",
+      "usedIn": "services",
+      "url": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=85"
+    },
+    {
+      "id": "service-promenade-performance",
+      "label": "Променад-спектакль",
+      "usedIn": "services",
+      "url": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1400&q=85"
+    },
+    {
+      "id": "project-constantinople",
+      "label": "Константинополь",
+      "usedIn": "portfolio",
+      "url": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1600&q=85"
+    },
+    {
+      "id": "project-museum-space",
+      "label": "Голос музея",
+      "usedIn": "portfolio",
+      "url": "https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?auto=format&fit=crop&w=1200&q=85"
+    },
+    {
+      "id": "project-promenade",
+      "label": "Город звучит",
+      "usedIn": "portfolio",
+      "url": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=1800&q=85"
+    },
+    {
+      "id": "project-interactive-quest",
+      "label": "Маршрут памяти",
+      "usedIn": "portfolio",
+      "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=85"
+    }
+  ],
+  "dictionaries": {
+    "ru": {
+      "seo": {
+        "title": "Soundia — creative audio studio",
+        "description": "Soundia создает аудиогиды, аудиоквесты, 3D-звук и культурные звуковые впечатления."
+      },
+      "nav": {
+        "work": "Портфолио",
+        "services": "Услуги",
+        "pricing": "Цены",
+        "contact": "Контакты",
+        "courses": "Курсы",
+        "about": "О студии"
+      },
+      "common": {
+        "discussProject": "Обсудить проект ↗",
+        "viewCase": "Открыть проект ↗",
+        "watchCourses": "Смотреть курсы ↗",
+        "play": "Play",
+        "pause": "Pause"
+      },
+      "case": {
+        "back": "Selected work",
+        "type": "Тип",
+        "place": "Место",
+        "year": "Год",
+        "facts": "Данные проекта",
+        "orderAudioGuide": "Заказать аудиогид",
+        "next": "Следующий проект"
+      },
+      "home": {
+        "hero": {
+          "eyebrow": "Звук создаёт опыт",
+          "headline": [
+            "Создаём миры,",
+            "которые можно",
+            "услышать."
+          ],
+          "meta": [
+            "Аудиогиды",
+            "3D-аудио",
+            "Аудиоигры",
+            "Интерактивный звук",
+            "Голос"
+          ],
+          "cta": "Послушать наши работы",
+          "scroll": "Scroll"
+        },
+        "services": {
+          "label": "02 / What we create",
+          "headline": [
+            "От идеи",
+            "до готового",
+            "звукового мира."
+          ]
+        },
+        "pricing": {
+          "label": "05 / Packages",
+          "headline": "Пакеты и стартовые бюджеты"
+        }
+      },
+      "footer": {
+        "copyright": "© 2026 Soundia. All rights reserved."
+      }
+    },
+    "lv": {
+      "seo": {
+        "title": "Soundia — creative audio studio",
+        "description": "Soundia veido audiogidus, audiokvestus, 3D skaņu un kultūras skaņas pieredzes."
+      },
+      "nav": {
+        "work": "Portfolio",
+        "services": "Pakalpojumi",
+        "pricing": "Cenas",
+        "contact": "Kontakti",
+        "courses": "Kursi",
+        "about": "Studija"
+      },
+      "common": {
+        "discussProject": "Apspriest projektu ↗",
+        "viewCase": "Atvērt projektu ↗",
+        "watchCourses": "Skatīt kursus ↗",
+        "play": "Play",
+        "pause": "Pause"
+      },
+      "case": {
+        "back": "Selected work",
+        "type": "Tips",
+        "place": "Vieta",
+        "year": "Gads",
+        "facts": "Projekta dati",
+        "orderAudioGuide": "Pasūtīt audiogidu",
+        "next": "Nākamais projekts"
+      },
+      "home": {
+        "hero": {
+          "eyebrow": "Soundia Creative Studio · Rīga",
+          "headline": [
+            "Skaņa,",
+            "kas",
+            "rada",
+            "telpu."
+          ],
+          "meta": [
+            "15+ gadu pieredze",
+            "3D / Spatial / Interactive sound",
+            "RU / LV / EN · 3 valodas"
+          ],
+          "cta": "Klausīties mūsu darbus",
+          "scroll": "Scroll"
+        },
+        "services": {
+          "label": "02 / What we create",
+          "headline": [
+            "No idejas",
+            "līdz gatavai",
+            "skaņas pasaulei."
+          ]
+        },
+        "pricing": {
+          "label": "05 / Packages",
+          "headline": "Paketes un sākuma budžeti"
+        }
+      },
+      "footer": {
+        "copyright": "© 2026 Soundia. All rights reserved."
+      }
+    },
+    "en": {
+      "seo": {
+        "title": "Soundia — creative audio studio",
+        "description": "Soundia creates audio guides, audio quests, spatial sound and cultural sound experiences."
+      },
+      "nav": {
+        "work": "Portfolio",
+        "services": "Services",
+        "pricing": "Pricing",
+        "contact": "Contact",
+        "courses": "Courses",
+        "about": "About"
+      },
+      "common": {
+        "discussProject": "Discuss a project ↗",
+        "viewCase": "View case ↗",
+        "watchCourses": "Explore courses ↗",
+        "play": "Play",
+        "pause": "Pause"
+      },
+      "case": {
+        "back": "Selected work",
+        "type": "Type",
+        "place": "Place",
+        "year": "Year",
+        "facts": "Project facts",
+        "orderAudioGuide": "Order an audio guide",
+        "next": "Next case"
+      },
+      "home": {
+        "hero": {
+          "eyebrow": "Soundia Creative Studio · Riga",
+          "headline": [
+            "Sound",
+            "that",
+            "creates",
+            "space."
+          ],
+          "meta": [
+            "15+ years experience",
+            "3D / Spatial / Interactive sound",
+            "RU / LV / EN · 3 languages"
+          ],
+          "cta": "Listen to our work",
+          "scroll": "Scroll"
+        },
+        "services": {
+          "label": "02 / What we create",
+          "headline": [
+            "From idea",
+            "to a complete",
+            "sound world."
+          ]
+        },
+        "pricing": {
+          "label": "05 / Packages",
+          "headline": "Packages and starting budgets"
+        }
+      },
+      "footer": {
+        "copyright": "© 2026 Soundia. All rights reserved."
+      }
+    }
+  },
+  "contacts": {
+    "email": "info@soundia.studio",
+    "phone": "+371 29230745",
+    "messaging": "whatsapp, telegram",
+    "address": "Eizenšteina 59a, Riga, Latvija",
+    "socials": [
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/soundia.production"
+      },
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/soundia.production"
+      }
+    ]
+  },
+  "media": {
+    "publicImages": [
+      "/altum-liaa.jpeg",
+      "/liaa1-1.jpeg",
+      "/logo.png",
+      "/logo.svg",
+      "/Project.png",
+      "/soundia-courses-hero.png",
+      "/soundia-hero-clean.png",
+      "/soundia-hero-reference.png",
+      "/su_logo-eng_horizviolets.png"
+    ]
+  },
+  "services": [
+    {
+      "id": "audio-guide",
+      "number": "01",
+      "title": {
+        "ru": "Аудиогид",
+        "lv": "Audiogids",
+        "en": "Audio guide"
+      },
+      "meta": {
+        "ru": "Museums / Galleries / Spaces",
+        "lv": "Muzeji / Galerijas / Telpas",
+        "en": "Museums / Galleries / Spaces"
+      },
+      "description": {
+        "ru": "Аудиогид помогает посетителю спокойно пройти маршрут и услышать историю места в нужном темпе. Мы собираем структуру, пишем или редактируем текст, записываем голос, добавляем музыку и звуковую среду, а затем готовим материалы к публикации.",
+        "lv": "Audiogids palīdz apmeklētājam mierīgi iziet maršrutu un dzirdēt vietas stāstu pareizā tempā. Mēs veidojam struktūru, rakstām vai rediģējam tekstu, ierakstām balsi, pievienojam mūziku un skaņas vidi, pēc tam sagatavojam materiālus publicēšanai.",
+        "en": "An audio guide helps visitors move through a route at a calm pace and hear the place as a complete story. We shape the structure, write or edit the text, record voices, add music and atmosphere, then prepare the materials for publication."
+      },
+      "steps": [
+        {
+          "ru": "Идея аудиогида и маршрут",
+          "lv": "Audiogida ideja un maršruts",
+          "en": "Audio guide idea and route"
+        },
+        {
+          "ru": "Разработка сценария",
+          "lv": "Scenārija izstrāde",
+          "en": "Script development"
+        },
+        {
+          "ru": "Подбор голоса и запись",
+          "lv": "Balss atlase un ieraksts",
+          "en": "Voice casting and recording"
+        },
+        {
+          "ru": "Музыкальное сопровождение и звуковая среда",
+          "lv": "Mūzika un skaņas vide",
+          "en": "Music and sound environment"
+        },
+        {
+          "ru": "Монтаж, тестирование и публикация",
+          "lv": "Montāža, testēšana un publicēšana",
+          "en": "Editing, testing and publication"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1400&q=85",
+      "audioLabel": {
+        "ru": "Трейлер аудиогида",
+        "lv": "Audiogida treileris",
+        "en": "Audio guide trailer"
+      },
+      "orderLabel": {
+        "ru": "Заказать аудиогид",
+        "lv": "Pasūtīt audiogidu",
+        "en": "Order audio guide"
+      },
+      "audioUrl": "https://soundia.zenith.lv/audio/constantinople-preview.mp3",
+      "duration": "00:38",
+      "href": "/services/audio-guide"
+    },
+    {
+      "id": "audio-quest",
+      "number": "02",
+      "title": {
+        "ru": "Аудиоквест",
+        "lv": "Audiokvests",
+        "en": "Audio quest"
+      },
+      "meta": {
+        "ru": "Interactive storytelling",
+        "lv": "Interaktīvs stāstījums",
+        "en": "Interactive storytelling"
+      },
+      "description": {
+        "ru": "Аудиоквест соединяет маршрут, задания, выбор и звук. Мы продумываем логику прохождения, пишем сцены и подсказки, создаем звуковые переходы и собираем историю так, чтобы участник двигался внутри нее, а не просто слушал текст.",
+        "lv": "Audiokvests savieno maršrutu, uzdevumus, izvēli un skaņu. Mēs izstrādājam norises loģiku, rakstām ainas un norādes, veidojam skaņas pārejas un saliekam stāstu tā, lai dalībnieks tajā pārvietotos, nevis tikai klausītos tekstu.",
+        "en": "An audio quest combines route, tasks, choices and sound. We design the logic, write scenes and cues, create sound transitions and build the story so the participant moves inside it instead of only listening."
+      },
+      "steps": [
+        {
+          "ru": "Идея игры и маршрут",
+          "lv": "Spēles ideja un maršruts",
+          "en": "Game idea and route"
+        },
+        {
+          "ru": "Сценарные задания",
+          "lv": "Scenārija uzdevumi",
+          "en": "Scenario tasks"
+        },
+        {
+          "ru": "Голоса, музыка и звуковые эффекты",
+          "lv": "Balsis, mūzika un skaņas efekti",
+          "en": "Voices, music and sound effects"
+        },
+        {
+          "ru": "Сборка интерактивной структуры",
+          "lv": "Interaktīvās struktūras montāža",
+          "en": "Interactive structure assembly"
+        },
+        {
+          "ru": "Тестирование и запуск",
+          "lv": "Testēšana un palaišana",
+          "en": "Testing and launch"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
+      "audioLabel": {
+        "ru": "Фрагмент аудиоквеста",
+        "lv": "Audiokvesta fragments",
+        "en": "Audio quest fragment"
+      },
+      "orderLabel": {
+        "ru": "Заказать аудиоквест",
+        "lv": "Pasūtīt audiokvestu",
+        "en": "Order audio quest"
+      },
+      "audioUrl": "https://soundia.zenith.lv/audio/city-preview.mp3",
+      "duration": "00:42",
+      "href": "/services/audio-quest"
+    },
+    {
+      "id": "spatial-audio",
+      "number": "03",
+      "title": {
+        "ru": "3D-аудио",
+        "lv": "3D audio",
+        "en": "3D audio"
+      },
+      "meta": {
+        "ru": "Spatial immersive experience",
+        "lv": "Telpiska pieredze",
+        "en": "Spatial immersive experience"
+      },
+      "description": {
+        "ru": "3D-аудио создает ощущение присутствия: звук движется вокруг слушателя, раскрывает сцену и помогает поверить в пространство. Такой формат подходит для иммерсивных спектаклей, выставок, VR и интерактивных проектов.",
+        "lv": "3D audio rada klātbūtnes sajūtu: skaņa pārvietojas ap klausītāju, atver ainu un palīdz noticēt telpai. Šis formāts der imersīvām izrādēm, izstādēm, VR un interaktīviem projektiem.",
+        "en": "3D audio creates presence: sound moves around the listener, opens the scene and makes the space believable. It works for immersive performances, exhibitions, VR and interactive projects."
+      },
+      "steps": [
+        {
+          "ru": "Техническое задание и формат прослушивания",
+          "lv": "Tehniskais uzdevums un klausīšanās formāts",
+          "en": "Brief and listening format"
+        },
+        {
+          "ru": "Звуковая карта пространства",
+          "lv": "Telpas skaņas karte",
+          "en": "Sound map of the space"
+        },
+        {
+          "ru": "Запись и обработка звуков",
+          "lv": "Skaņu ieraksts un apstrāde",
+          "en": "Sound recording and processing"
+        },
+        {
+          "ru": "3D-сборка и сведение",
+          "lv": "3D montāža un miksēšana",
+          "en": "3D assembly and mix"
+        },
+        {
+          "ru": "Тестирование на площадке или в наушниках",
+          "lv": "Testēšana telpā vai austiņās",
+          "en": "Testing on site or in headphones"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1400&q=85",
+      "audioLabel": {
+        "ru": "3D-звук",
+        "lv": "3D skaņa",
+        "en": "3D sound"
+      },
+      "orderLabel": {
+        "ru": "Заказать 3D-аудио",
+        "lv": "Pasūtīt 3D audio",
+        "en": "Order 3D audio"
+      },
+      "audioUrl": "https://soundia.zenith.lv/audio/city-preview.mp3",
+      "duration": "00:42",
+      "href": "/services/spatial-audio"
+    },
+    {
+      "id": "audio-game",
+      "number": "04",
+      "title": {
+        "ru": "Аудиоигра",
+        "lv": "Audiospēle",
+        "en": "Audio game"
+      },
+      "meta": {
+        "ru": "Sound-led interaction",
+        "lv": "Skaņas vadīta mijiedarbība",
+        "en": "Sound-led interaction"
+      },
+      "description": {
+        "ru": "Для игры звук должен работать как часть механики: подсказывать, реагировать, создавать ритм и атмосферу. Мы готовим сценарий аудиосцен, записываем реплики, собираем эффекты и передаем материалы в удобном для разработки формате.",
+        "lv": "Spēlē skaņai jāstrādā kā mehānikas daļai: jāpalīdz, jāreaģē, jāveido ritms un atmosfēra. Mēs gatavojam audio ainu scenāriju, ierakstām replikas, veidojam efektus un nododam materiālus izstrādei ērtā formātā.",
+        "en": "In a game, sound needs to act as part of the mechanics: guiding, reacting, setting rhythm and atmosphere. We prepare audio scene scripts, record lines, build effects and deliver assets in a development-ready format."
+      },
+      "steps": [
+        {
+          "ru": "Звуковая логика игры",
+          "lv": "Spēles skaņas loģika",
+          "en": "Game sound logic"
+        },
+        {
+          "ru": "Сценарий реплик и событий",
+          "lv": "Repliku un notikumu scenārijs",
+          "en": "Dialogue and event script"
+        },
+        {
+          "ru": "Подбор голосов и запись",
+          "lv": "Balsu atlase un ieraksts",
+          "en": "Voice casting and recording"
+        },
+        {
+          "ru": "Эффекты, музыка и монтаж",
+          "lv": "Efekti, mūzika un montāža",
+          "en": "Effects, music and editing"
+        },
+        {
+          "ru": "Передача аудиопакета команде",
+          "lv": "Audio pakotnes nodošana komandai",
+          "en": "Audio package handoff"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=85",
+      "audioLabel": {
+        "ru": "Фрагмент игры",
+        "lv": "Spēles fragments",
+        "en": "Game fragment"
+      },
+      "orderLabel": {
+        "ru": "Заказать аудиоигру",
+        "lv": "Pasūtīt audiospēli",
+        "en": "Order audio game"
+      },
+      "audioUrl": "https://soundia.zenith.lv/audio/constantinople-preview.mp3",
+      "duration": "00:38",
+      "href": "/services/audio-game"
+    },
+    {
+      "id": "promenade-performance",
+      "number": "05",
+      "title": {
+        "ru": "Променад-спектакль",
+        "lv": "Promenādes izrāde",
+        "en": "Promenade performance"
+      },
+      "meta": {
+        "ru": "City / route / voice",
+        "lv": "Pilsēta / maršruts / balss",
+        "en": "City / route / voice"
+      },
+      "description": {
+        "ru": "Променад-спектакль превращает город или пространство в сцену. Слушатель идет по маршруту, слышит голоса, музыку и окружающие звуки, а история раскрывается через движение и конкретные точки.",
+        "lv": "Promenādes izrāde pārvērš pilsētu vai telpu par skatuvi. Klausītājs iet pa maršrutu, dzird balsis, mūziku un vides skaņas, bet stāsts atklājas caur kustību un konkrētiem punktiem.",
+        "en": "A promenade performance turns a city or space into a stage. The listener walks the route, hears voices, music and ambient sound, and the story unfolds through movement and specific locations."
+      },
+      "steps": [
+        {
+          "ru": "Идея спектакля и маршрут",
+          "lv": "Izrādes ideja un maršruts",
+          "en": "Performance idea and route"
+        },
+        {
+          "ru": "Сценарий прогулки",
+          "lv": "Pastaigas scenārijs",
+          "en": "Walking script"
+        },
+        {
+          "ru": "Голоса, музыка и фонограммы",
+          "lv": "Balsis, mūzika un fonogrammas",
+          "en": "Voices, music and backing tracks"
+        },
+        {
+          "ru": "Сборка сцен по точкам маршрута",
+          "lv": "Ainu montāža pa maršruta punktiem",
+          "en": "Scene assembly by route points"
+        },
+        {
+          "ru": "Тестирование маршрута и запуск",
+          "lv": "Maršruta testēšana un palaišana",
+          "en": "Route testing and launch"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1400&q=85",
+      "audioLabel": {
+        "ru": "Фрагмент променад-спектакля",
+        "lv": "Promenādes izrādes fragments",
+        "en": "Promenade fragment"
+      },
+      "orderLabel": {
+        "ru": "Заказать променад-спектакль",
+        "lv": "Pasūtīt promenādes izrādi",
+        "en": "Order promenade performance"
+      },
+      "audioUrl": "https://soundia.zenith.lv/audio/city-preview.mp3",
+      "duration": "00:42",
+      "href": "/services/promenade-performance"
+    }
+  ],
+  "projects": [
+    {
+      "id": "constantinople",
+      "number": "01",
+      "title": {
+        "ru": "Константинополь",
+        "lv": "Konstantinopole",
+        "en": "Constantinople"
+      },
+      "category": {
+        "ru": "Аудиогид · Istanbul",
+        "lv": "Audiogids · Istanbul",
+        "en": "Audio guide · Istanbul"
+      },
+      "summary": {
+        "ru": "Аудиоистория маршрута в Istanbul: голос, музыка и городской шум собирают пространство вокруг слушателя.",
+        "lv": "Audio stāsts maršrutam Istanbulā: balss, mūzika un pilsētas troksnis veido telpu ap klausītāju.",
+        "en": "An audio route in Istanbul where voice, music and city noise shape the space around the listener."
+      },
+      "scope": [
+        {
+          "ru": "Драматургия маршрута",
+          "lv": "Maršruta dramaturģija",
+          "en": "Route dramaturgy"
+        },
+        {
+          "ru": "Голос и монтаж",
+          "lv": "Balss un montāža",
+          "en": "Voice and editing"
+        },
+        {
+          "ru": "Звуковая среда",
+          "lv": "Skaņas vide",
+          "en": "Sound environment"
+        }
+      ],
+      "location": "Istanbul / TR",
+      "year": "2024",
+      "image": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1600&q=85",
+      "audioUrl": "data:audio/wav;base64,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",
+      "duration": "00:01",
+      "href": "/constantinople",
+      "layout": "wide"
+    },
+    {
+      "id": "museum-space",
+      "number": "02",
+      "title": {
+        "ru": "Голос музея",
+        "lv": "Muzeja balss",
+        "en": "Museum Voice"
+      },
+      "category": {
+        "ru": "Museum · Spatial",
+        "lv": "Muzejs · Telpisks",
+        "en": "Museum · Spatial"
+      },
+      "summary": {
+        "ru": "Звуковой слой для музейного пространства: спокойная навигация, голос и атмосфера экспозиции.",
+        "lv": "Skaņas slānis muzeja telpai: mierīga navigācija, balss un ekspozīcijas atmosfēra.",
+        "en": "A sound layer for a museum space: calm navigation, voice and exhibition atmosphere."
+      },
+      "scope": [
+        {
+          "ru": "Аудионавигация",
+          "lv": "Audionavigācija",
+          "en": "Audio navigation"
+        },
+        {
+          "ru": "Пространственный звук",
+          "lv": "Telpiska skaņa",
+          "en": "Spatial sound"
+        },
+        {
+          "ru": "Атмосфера экспозиции",
+          "lv": "Ekspozīcijas atmosfēra",
+          "en": "Exhibition atmosphere"
+        }
+      ],
+      "location": "Riga / LV",
+      "year": "2023",
+      "image": "https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?auto=format&fit=crop&w=1200&q=85",
+      "href": "/museum-space",
+      "layout": "right"
+    },
+    {
+      "id": "promenade",
+      "number": "03",
+      "title": {
+        "ru": "Город звучит",
+        "lv": "Pilsēta skan",
+        "en": "The City Speaks"
+      },
+      "category": {
+        "ru": "Променад-спектакль",
+        "lv": "Promenādes izrāde",
+        "en": "Promenade performance"
+      },
+      "summary": {
+        "ru": "Пешеходный звуковой опыт, где город становится сценой, а слушатель движется внутри истории.",
+        "lv": "Pastaigas skaņas pieredze, kur pilsēta kļūst par skatuvi un klausītājs pārvietojas stāstā.",
+        "en": "A walking sound experience where the city becomes the stage and the listener moves inside the story."
+      },
+      "scope": [
+        {
+          "ru": "Сценарий прогулки",
+          "lv": "Pastaigas scenārijs",
+          "en": "Walking script"
+        },
+        {
+          "ru": "Полевые звуки",
+          "lv": "Lauka skaņas",
+          "en": "Field sounds"
+        },
+        {
+          "ru": "Музыкальная драматургия",
+          "lv": "Muzikālā dramaturģija",
+          "en": "Musical dramaturgy"
+        }
+      ],
+      "location": "Baltics",
+      "year": "2024",
+      "image": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=1800&q=85",
+      "href": "/promenade",
+      "layout": "full"
+    },
+    {
+      "id": "interactive-quest",
+      "number": "04",
+      "title": {
+        "ru": "Маршрут памяти",
+        "lv": "Atmiņas maršruts",
+        "en": "Memory Route"
+      },
+      "category": {
+        "ru": "Аудиоквест",
+        "lv": "Audiokvests",
+        "en": "Audio quest"
+      },
+      "summary": {
+        "ru": "Интерактивный маршрут с голосом, выбором и звуковыми подсказками, построенный вокруг памяти места.",
+        "lv": "Interaktīvs maršruts ar balsi, izvēli un skaņas norādēm, kas veidots ap vietas atmiņu.",
+        "en": "An interactive route with voice, choice and sound cues, built around the memory of a place."
+      },
+      "scope": [
+        {
+          "ru": "Интерактивная структура",
+          "lv": "Interaktīva struktūra",
+          "en": "Interactive structure"
+        },
+        {
+          "ru": "Голосовые сцены",
+          "lv": "Balss ainas",
+          "en": "Voice scenes"
+        },
+        {
+          "ru": "Звуковые подсказки",
+          "lv": "Skaņas norādes",
+          "en": "Sound cues"
+        }
+      ],
+      "location": "EU",
+      "year": "2022",
+      "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=85",
+      "href": "/interactive-quest",
+      "layout": "split"
+    }
+  ]
+}
