@@ -19,9 +19,15 @@
 </head>
 <body>
     @include('partials.header', compact('locale', 'nav', 'contacts', 'content'))
+    @if(!empty($contacts['globalAudio']))
+        @php($globalAudioSrc = preg_match('~^https?://~i', $contacts['globalAudio']) ? $contacts['globalAudio'] : asset(ltrim($contacts['globalAudio'], '/')))
+        <audio class="global-site-audio" src="{{ $globalAudioSrc }}" preload="auto" loop data-global-audio></audio>
+    @endif
     @yield('content')
     @include('partials.footer', compact('locale', 'nav', 'contacts', 'dict', 'content'))
 </body>
 </html>
+
+
 
 

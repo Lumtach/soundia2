@@ -155,3 +155,81 @@ if (portfolioItems.length && portfolioImage) {
 
 
 
+
+const globalAudio = document.querySelector('[data-global-audio]');
+const globalAudioToggle = document.querySelector('.global-audio-toggle');
+const globalAudioStorageKey = 'soundia.globalAudio';
+
+if (globalAudio && globalAudioToggle) {
+  const readState = () => {
+    try {
+      return JSON.parse(localStorage.getItem(globalAudioStorageKey) || '{}');
+    } catch (error) {
+      return {};
+    }
+  };
+
+  const writeState = (state = {}) => {
+    const current = readState();
+    localStorage.setItem(globalAudioStorageKey, JSON.stringify({ ...current, ...state, src: globalAudio.currentSrc || globalAudio.src }));
+  };
+
+  const updateGlobalAudioButton = () => {
+    const playing = !globalAudio.paused;
+    globalAudioToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    globalAudioToggle.setAttribute('aria-label', playing ? 'Pause site audio' : 'Play site audio');
+  };
+
+  const restoreGlobalAudio = () => {
+    const state = readState();
+    if (state.src && state.src !== (globalAudio.currentSrc || globalAudio.src)) return;
+    if (Number.isFinite(Number(state.time))) {
+      const restoreTime = Number(state.time);
+      globalAudio.addEventListener('loadedmetadata', () => {
+        if (Number.isFinite(globalAudio.duration) && globalAudio.duration > 0) {
+          globalAudio.currentTime = restoreTime % globalAudio.duration;
+        } else {
+          globalAudio.currentTime = restoreTime;
+        }
+      }, { once: true });
+    }
+
+    if (state.playing) {
+      globalAudio.play().catch(() => updateGlobalAudioButton());
+    }
+  };
+
+  globalAudioToggle.addEventListener('click', () => {
+    if (globalAudio.paused) {
+      document.querySelectorAll('audio').forEach((item) => { if (item !== globalAudio) item.pause(); });
+      globalAudio.play().then(() => writeState({ playing: true })).catch(() => writeState({ playing: false }));
+    } else {
+      globalAudio.pause();
+      writeState({ playing: false, time: globalAudio.currentTime || 0 });
+    }
+  });
+
+  globalAudio.addEventListener('play', () => {
+    writeState({ playing: true });
+    updateGlobalAudioButton();
+  });
+
+  globalAudio.addEventListener('pause', () => {
+    writeState({ playing: false, time: globalAudio.currentTime || 0 });
+    updateGlobalAudioButton();
+  });
+
+  globalAudio.addEventListener('timeupdate', () => {
+    writeState({ time: globalAudio.currentTime || 0, playing: !globalAudio.paused });
+  });
+
+  window.addEventListener('beforeunload', () => {
+    writeState({ time: globalAudio.currentTime || 0, playing: !globalAudio.paused });
+  });
+
+  restoreGlobalAudio();
+  updateGlobalAudioButton();
+} else if (globalAudioToggle) {
+  globalAudioToggle.disabled = true;
+  globalAudioToggle.setAttribute('aria-disabled', 'true');
+}
