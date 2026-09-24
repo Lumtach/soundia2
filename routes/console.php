@@ -19,6 +19,9 @@ Artisan::command('soundia:db-check', function () {
         'portfolio_langs',
         'portfolio_images',
         'portfolio_audios',
+        'packages',
+        'package_items',
+        'package_audios',
     ];
 
     $this->line('Connection: ' . config('database.default'));
@@ -50,6 +53,7 @@ Artisan::command('soundia:db-check', function () {
         $this->line('Loaded pages: ' . count($content['pages'] ?? []));
         $this->line('Loaded labels: ' . array_sum(array_map('count', $content['labels'] ?? [])));
         $this->line('Loaded services: ' . count($content['services'] ?? []));
+        $this->line('Loaded prices: ' . count($content['prices'] ?? []));
         $this->line('Loaded portfolio: ' . count($content['projects'] ?? []));
         $this->line('Contact email: ' . ($content['contacts']['email'] ?? '-'));
     } catch (Throwable $exception) {
@@ -59,4 +63,5 @@ Artisan::command('soundia:db-check', function () {
 
     return self::SUCCESS;
 })->purpose('Check Soundia database content loading');
+
 

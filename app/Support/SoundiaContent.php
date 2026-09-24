@@ -23,6 +23,7 @@ class SoundiaContent
         $content['contacts'] = self::loadSection('contacts', fn () => self::contacts($content['contacts'] ?? []), $content['contacts'] ?? []);
         $content['projects'] = self::loadSection('portfolio', fn () => self::portfolio($content['projects'] ?? []), $content['projects'] ?? []);
         $content['services'] = self::loadSection('services', fn () => self::services($content['services'] ?? []), $content['services'] ?? []);
+        $content['prices'] = self::loadSection('prices', fn () => self::packages(), $content['prices'] ?? []);
 
         return $content;
     }
@@ -243,6 +244,94 @@ class SoundiaContent
         })->values()->all();
     }
 
+    private static function packages(): array
+    {
+        if (! self::hasTables(['packages'])) {
+            return [];
+        }
+
+        $rows = DB::table('packages')
+            ->where(function ($query) {
+                $query->where('ons', 1)->orWhereNull('ons');
+            })
+            ->orderBy('sort')
+            ->orderBy('id')
+            ->get();
+
+        if ($rows->isEmpty()) {
+            return [];
+        }
+
+        $items = self::hasTables(['package_items'])
+            ? DB::table('package_items')->orderBy('id')->get()->groupBy('package_id')
+            : collect();
+        $audios = self::hasTables(['package_audios'])
+            ? DB::table('package_audios')->orderBy('id')->get()->groupBy('package_id')
+            : collect();
+
+        return $rows->map(function ($row) use ($items, $audios) {
+            $packageItems = $items->get($row->id, collect());
+            $packageAudios = $audios->get($row->id, collect());
+            $title = (string) ($row->names ?? ('Package ' . $row->id));
+            $included = self::packageItems($packageItems);
+            $audio = self::firstAudio(collect(), $packageAudios);
+
+            return [
+                'id' => (string) ($row->id ?? $title),
+                'title' => ['ru' => $title, 'lv' => $title, 'en' => $title],
+                'description' => self::packageDescription($included),
+                'price' => '€' . (string) ($row->price ?? ''),
+                'timing' => (string) ($row->timing ?? ''),
+                'items' => $included,
+                'audioLabel' => self::localized($packageAudios, 'title', ''),
+                'audioUrl' => $audio ? self::publicUpload('packages/audio', $audio) : null,
+                'questType' => (int) ($row->quest_type ?? 0),
+                'metrics' => [
+                    'scenario' => (int) ($row->scenario ?? 0),
+                    'sounds' => (int) ($row->sounds ?? 0),
+                    'soundDesign' => (int) ($row->sound_design ?? 0),
+                    'music' => (int) ($row->music ?? 0),
+                ],
+            ];
+        })->values()->all();
+    }
+
+    private static function packageItems($rows): array
+    {
+        $values = ['ru' => [], 'lv' => [], 'en' => []];
+
+        foreach ($rows as $row) {
+            $locale = self::localeFromRow($row);
+            $text = trim((string) ($row->param ?? ''));
+            if (! $locale || $text === '') {
+                continue;
+            }
+
+            $values[$locale][] = $text;
+        }
+
+        foreach (['lv', 'ru', 'en'] as $source) {
+            if (! empty($values[$source])) {
+                foreach ($values as $locale => $items) {
+                    if (empty($items)) {
+                        $values[$locale] = $values[$source];
+                    }
+                }
+                break;
+            }
+        }
+
+        return $values;
+    }
+
+    private static function packageDescription(array $items): array
+    {
+        return [
+            'ru' => implode(' / ', array_slice($items['ru'] ?? [], 0, 3)),
+            'lv' => implode(' / ', array_slice($items['lv'] ?? [], 0, 3)),
+            'en' => implode(' / ', array_slice($items['en'] ?? [], 0, 3)),
+        ];
+    }
     private static function services(array $fallback): array
     {
         if (! self::hasTables(['services', 'service_langs'])) {
@@ -520,6 +609,7 @@ class SoundiaContent
         ];
     }
 }
+
 
 
 
