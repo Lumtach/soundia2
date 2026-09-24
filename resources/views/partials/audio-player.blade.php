@@ -1,6 +1,10 @@
+@php
+$playLabel = soundiaLabel($labels ?? [], 'audio.play', $locale === 'ru' ? 'Воспроизвести фрагмент' : ($locale === 'lv' ? 'Atskaņot fragmentu' : 'Play preview'));
+$pauseLabel = soundiaLabel($labels ?? [], 'audio.pause', $locale === 'ru' ? 'Пауза' : ($locale === 'lv' ? 'Pauze' : 'Pause'));
+@endphp
 <div class="audio-player audio-player--waveform">
   <audio src="{{ $src }}" preload="none"></audio>
-  <button class="audio-player__button" type="button" aria-label="{{ $locale === 'ru' ? 'Воспроизвести фрагмент' : ($locale === 'lv' ? 'Atskaņot fragmentu' : 'Play preview') }}" data-play="{{ $locale === 'ru' ? 'Воспроизвести фрагмент' : ($locale === 'lv' ? 'Atskaņot fragmentu' : 'Play preview') }}" data-pause="{{ $locale === 'ru' ? 'Пауза' : ($locale === 'lv' ? 'Pauze' : 'Pause') }}">
+  <button class="audio-player__button" type="button" aria-label="{{ $playLabel }}" data-play="{{ $playLabel }}" data-pause="{{ $pauseLabel }}">
     <span class="audio-player__play-icon" aria-hidden="true"></span>
   </button>
   <div class="audio-player__wave" aria-hidden="true">

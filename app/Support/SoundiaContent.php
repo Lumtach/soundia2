@@ -18,18 +18,74 @@ class SoundiaContent
     {
         $content = json_decode(file_get_contents(resource_path('data/site-content.json')), true);
 
-        try {
-            $content['pages'] = self::pages();
-            $content['contacts'] = self::contacts($content['contacts'] ?? []);
-            $content['projects'] = self::portfolio($content['projects'] ?? []);
-            $content['services'] = self::services($content['services'] ?? []);
-        } catch (Throwable $exception) {
-            report($exception);
-        }
+        $content['pages'] = self::loadSection('pages', fn () => self::pages(), $content['pages'] ?? []);
+        $content['labels'] = self::loadSection('labels', fn () => self::labels(), []);
+        $content['contacts'] = self::loadSection('contacts', fn () => self::contacts($content['contacts'] ?? []), $content['contacts'] ?? []);
+        $content['projects'] = self::loadSection('portfolio', fn () => self::portfolio($content['projects'] ?? []), $content['projects'] ?? []);
+        $content['services'] = self::loadSection('services', fn () => self::services($content['services'] ?? []), $content['services'] ?? []);
 
         return $content;
     }
 
+    private static function loadSection(string $section, callable $loader, array $fallback): array
+    {
+        try {
+            $data = $loader();
+
+            return is_array($data) ? $data : $fallback;
+        } catch (Throwable $exception) {
+            report(new \RuntimeException("Soundia DB {$section} loading failed: " . $exception->getMessage(), 0, $exception));
+
+            return $fallback;
+        }
+    }
+
+    private static function labels(): array
+    {
+        $table = null;
+        foreach (['labels', 'site_labels', 'translations', 'dictionaries'] as $candidate) {
+            if (Schema::hasTable($candidate)) {
+                $table = $candidate;
+                break;
+            }
+        }
+
+        if (! $table) {
+            return [];
+        }
+
+        $columns = Schema::getColumnListing($table);
+        $keyColumn = self::firstColumn($columns, ['key', 'label_key', 'name', 'alias', 'code']);
+        $valueColumn = self::firstColumn($columns, ['value', 'label', 'text', 'title']);
+        $langColumn = self::firstColumn($columns, ['lang_id', 'lang', 'locale']);
+
+        if (! $keyColumn || ! $valueColumn) {
+            return [];
+        }
+
+        $labels = ['ru' => [], 'lv' => [], 'en' => []];
+        $rows = DB::table($table)->get();
+
+        foreach ($rows as $row) {
+            $key = trim((string) ($row->{$keyColumn} ?? ''));
+            $value = trim(strip_tags((string) ($row->{$valueColumn} ?? '')));
+            if ($key === '' || $value === '') {
+                continue;
+            }
+
+            $locale = $langColumn ? self::localeFromValue($row->{$langColumn} ?? null) : null;
+            if ($locale) {
+                $labels[$locale][$key] = $value;
+                continue;
+            }
+
+            foreach ($labels as $labelLocale => $items) {
+                $labels[$labelLocale][$key] = $value;
+            }
+        }
+
+        return $labels;
+    }
     private static function contacts(array $fallback): array
     {
         if (! self::hasTables(['settings'])) {
@@ -344,6 +400,27 @@ class SoundiaContent
 
         return $values;
     }
+    private static function firstColumn(array $columns, array $candidates): ?string
+    {
+        foreach ($candidates as $candidate) {
+            if (in_array($candidate, $columns, true)) {
+                return $candidate;
+            }
+        }
+
+        return null;
+    }
+
+    private static function localeFromValue(mixed $value): ?string
+    {
+        if (is_numeric($value)) {
+            return self::LANG_IDS[(int) $value] ?? null;
+        }
+
+        $code = strtolower(substr(trim((string) $value), 0, 2));
+
+        return in_array($code, ['ru', 'lv', 'en'], true) ? $code : null;
+    }
     private static function localeFromRow(object $row): ?string
     {
         $id = (int) ($row->lang_id ?? $row->lang ?? 0);
@@ -443,6 +520,8 @@ class SoundiaContent
         ];
     }
 }
+
+
 
 
 

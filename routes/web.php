@@ -42,6 +42,31 @@ function soundiaResolveLocale(array $content): string
     return $default;
 }
 
+function soundiaLabel(array $labels, string $key, string $fallback = ''): string
+{
+    return trim((string) ($labels[$key] ?? '')) ?: $fallback;
+}
+
+function soundiaPageTitle(array $pages, string $alias, string $locale, string $fallback): string
+{
+    $title = $pages[$alias]['title'][$locale] ?? '';
+
+    return trim((string) $title) ?: $fallback;
+}
+
+function soundiaNav(array $content, string $locale, array $fallback): array
+{
+    $pages = $content['pages'] ?? [];
+
+    return array_merge($fallback, [
+        'home' => soundiaPageTitle($pages, 'mains', $locale, $fallback['home'] ?? 'Home'),
+        'work' => soundiaPageTitle($pages, 'portfolio', $locale, $fallback['work'] ?? 'Portfolio'),
+        'services' => soundiaPageTitle($pages, 'services', $locale, $fallback['services'] ?? 'Services'),
+        'pricing' => soundiaPageTitle($pages, 'prices', $locale, $fallback['pricing'] ?? 'Pricing'),
+        'about' => soundiaPageTitle($pages, 'about-company', $locale, $fallback['about'] ?? 'About'),
+        'courses' => soundiaPageTitle($pages, 'courses', $locale, $fallback['courses'] ?? 'Courses'),
+    ]);
+}
 function soundiaCurrentPageAlias(): string
 {
     $routeName = request()->route()?->getName();
@@ -67,6 +92,8 @@ function soundiaData(array $extra = []): array
     }));
 
     $dict = $content['dictionaries'][$locale];
+    $labels = $content['labels'][$locale] ?? [];
+    $nav = soundiaNav($content, $locale, $dict['nav'] ?? []);
     $pageAlias = soundiaCurrentPageAlias();
     $page = $content['pages'][$pageAlias] ?? null;
     $pageTitle = is_array($page) ? ($page['metaTitle'][$locale] ?: ($page['title'][$locale] ?? '')) : '';
@@ -76,8 +103,9 @@ function soundiaData(array $extra = []): array
         'content' => $content,
         'locale' => $locale,
         'dict' => $dict,
-        'nav' => $dict['nav'],
+        'nav' => $nav,
         'contacts' => $content['contacts'],
+        'labels' => $labels,
         'pageRecord' => $page,
         'title' => $pageTitle ?: ($dict['seo']['title'] ?? 'Soundia'),
         'description' => $pageDescription ?: ($dict['seo']['description'] ?? 'Soundia creative audio studio'),
@@ -105,6 +133,7 @@ Route::get('/about-company', fn () => soundiaView('pages.about'))->name('about')
 Route::get('/services/{slug}', fn (string $slug) => soundiaView('pages.service-detail', ['slug' => $slug]))->name('services.show');
 Route::get('/courses/{slug}', fn (string $slug) => soundiaView('pages.course-detail', ['slug' => $slug]))->name('courses.show');
 Route::get('/{slug}', fn (string $slug) => soundiaView('pages.project-detail', ['slug' => $slug]))->where('slug', '^(?!api|build|storage).+')->name('projects.show');
+
 
 
 
